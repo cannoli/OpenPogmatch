@@ -1,0 +1,2 @@
+*.pbxproj -crlf -diff -merge
+*.png -crlf -diff -merge

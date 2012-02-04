@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4299929614DD8D65003EA13C /* BlueCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 4299928B14DD8D65003EA13C /* BlueCircle.png */; };
+		4299929714DD8D65003EA13C /* BlueQuad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4299928C14DD8D65003EA13C /* BlueQuad.png */; };
+		4299929814DD8D65003EA13C /* BlueTri.png in Resources */ = {isa = PBXBuildFile; fileRef = 4299928D14DD8D65003EA13C /* BlueTri.png */; };
+		4299929914DD8D65003EA13C /* GreenTri.png in Resources */ = {isa = PBXBuildFile; fileRef = 4299928E14DD8D65003EA13C /* GreenTri.png */; };
+		4299929A14DD8D65003EA13C /* MultiQuad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4299928F14DD8D65003EA13C /* MultiQuad.png */; };
+		4299929B14DD8D65003EA13C /* PinkTri.png in Resources */ = {isa = PBXBuildFile; fileRef = 4299929014DD8D65003EA13C /* PinkTri.png */; };
+		4299929C14DD8D65003EA13C /* RedCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 4299929114DD8D65003EA13C /* RedCircle.png */; };
+		4299929D14DD8D65003EA13C /* RedQuad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4299929214DD8D65003EA13C /* RedQuad.png */; };
+		4299929E14DD8D65003EA13C /* YellowQuad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4299929314DD8D65003EA13C /* YellowQuad.png */; };
+		4299929F14DD8D65003EA13C /* YellowTri.png in Resources */ = {isa = PBXBuildFile; fileRef = 4299929414DD8D65003EA13C /* YellowTri.png */; };
+		429992A014DD8D65003EA13C /* CardImages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4299929514DD8D65003EA13C /* CardImages.plist */; };
+		429992A314DDC545003EA13C /* ImageLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 429992A214DDC545003EA13C /* ImageLib.m */; };
+		42EA3CC514D286AA0046751D /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EA3CC414D286AA0046751D /* GameManager.m */; };
+		C47BD83B14D53C67008B2CA6 /* StatsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BD83A14D53C67008B2CA6 /* StatsManager.m */; };
+		C47BD83E14D542D8008B2CA6 /* PogUIProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BD83D14D542D8008B2CA6 /* PogUIProgressBar.m */; };
+		C47BD84614D6E716008B2CA6 /* PostGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BD84414D6E715008B2CA6 /* PostGameController.m */; };
+		C47BD84714D6E716008B2CA6 /* PostGameController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C47BD84514D6E716008B2CA6 /* PostGameController.xib */; };
+		C4D0F08F14D34AC200A1117A /* GameConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D0F08E14D34AC200A1117A /* GameConfig.m */; };
+		C4D0F09714D362EE00A1117A /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D0F09614D362EE00A1117A /* CardView.m */; };
+		C4EAF89E14D071050064D4E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EAF89D14D071050064D4E1 /* UIKit.framework */; };
+		C4EAF8A014D071050064D4E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EAF89F14D071050064D4E1 /* Foundation.framework */; };
+		C4EAF8A214D071050064D4E1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EAF8A114D071050064D4E1 /* CoreGraphics.framework */; };
+		C4EAF8A814D071050064D4E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4EAF8A614D071050064D4E1 /* InfoPlist.strings */; };
+		C4EAF8AA14D071050064D4E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EAF8A914D071050064D4E1 /* main.m */; };
+		C4EAF8AE14D071050064D4E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EAF8AD14D071050064D4E1 /* AppDelegate.m */; };
+		C4EAF8BC14D0E3BD0064D4E1 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C4EAF8BB14D0E3BD0064D4E1 /* Icon.png */; };
+		C4EAF8BE14D0E3C70064D4E1 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4EAF8BD14D0E3C70064D4E1 /* Icon@2x.png */; };
+		C4EAF8C014D0E5260064D4E1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C4EAF8BF14D0E5260064D4E1 /* Default.png */; };
+		C4EAF8C214D0E52D0064D4E1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4EAF8C114D0E52D0064D4E1 /* Default@2x.png */; };
+		C4EAF8CA14D11AD90064D4E1 /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EAF8C814D11AD90064D4E1 /* MainMenu.m */; };
+		C4EAF8CB14D11AD90064D4E1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EAF8C914D11AD90064D4E1 /* MainMenu.xib */; };
+		C4EAF8E114D2128E0064D4E1 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EAF8DF14D2128E0064D4E1 /* GameViewController.m */; };
+		C4EAF8E214D2128E0064D4E1 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EAF8E014D2128E0064D4E1 /* GameViewController.xib */; };
+		C4EAF8E914D2173D0064D4E1 /* ButtonQuit.png in Resources */ = {isa = PBXBuildFile; fileRef = C4EAF8E714D2173D0064D4E1 /* ButtonQuit.png */; };
+		C4EAF8EE14D21A480064D4E1 /* UINavigationController+Pog.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EAF8ED14D21A480064D4E1 /* UINavigationController+Pog.m */; };
+		C4EAF8F014D21E5D0064D4E1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EAF8EF14D21E5D0064D4E1 /* QuartzCore.framework */; };
+		C4EAF8F314D229360064D4E1 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EAF8F214D229360064D4E1 /* Card.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4299928B14DD8D65003EA13C /* BlueCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueCircle.png; sourceTree = "<group>"; };
+		4299928C14DD8D65003EA13C /* BlueQuad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueQuad.png; sourceTree = "<group>"; };
+		4299928D14DD8D65003EA13C /* BlueTri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueTri.png; sourceTree = "<group>"; };
+		4299928E14DD8D65003EA13C /* GreenTri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenTri.png; sourceTree = "<group>"; };
+		4299928F14DD8D65003EA13C /* MultiQuad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MultiQuad.png; sourceTree = "<group>"; };
+		4299929014DD8D65003EA13C /* PinkTri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PinkTri.png; sourceTree = "<group>"; };
+		4299929114DD8D65003EA13C /* RedCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedCircle.png; sourceTree = "<group>"; };
+		4299929214DD8D65003EA13C /* RedQuad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedQuad.png; sourceTree = "<group>"; };
+		4299929314DD8D65003EA13C /* YellowQuad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowQuad.png; sourceTree = "<group>"; };
+		4299929414DD8D65003EA13C /* YellowTri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowTri.png; sourceTree = "<group>"; };
+		4299929514DD8D65003EA13C /* CardImages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CardImages.plist; path = Assets/Game/CardImages.plist; sourceTree = "<group>"; };
+		429992A114DDC545003EA13C /* ImageLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLib.h; sourceTree = "<group>"; };
+		429992A214DDC545003EA13C /* ImageLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLib.m; sourceTree = "<group>"; };
+		42EA3CC314D286AA0046751D /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
+		42EA3CC414D286AA0046751D /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
+		C45CB8DC14D8E3CF001F8DBB /* PogAppEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PogAppEventHandler.h; sourceTree = "<group>"; };
+		C47BD83914D53C67008B2CA6 /* StatsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsManager.h; sourceTree = "<group>"; };
+		C47BD83A14D53C67008B2CA6 /* StatsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsManager.m; sourceTree = "<group>"; };
+		C47BD83C14D542D8008B2CA6 /* PogUIProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PogUIProgressBar.h; sourceTree = "<group>"; };
+		C47BD83D14D542D8008B2CA6 /* PogUIProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PogUIProgressBar.m; sourceTree = "<group>"; };
+		C47BD84314D6E715008B2CA6 /* PostGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostGameController.h; sourceTree = "<group>"; };
+		C47BD84414D6E715008B2CA6 /* PostGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostGameController.m; sourceTree = "<group>"; };
+		C47BD84514D6E716008B2CA6 /* PostGameController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostGameController.xib; sourceTree = "<group>"; };
+		C4D0F08D14D34AC200A1117A /* GameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
+		C4D0F08E14D34AC200A1117A /* GameConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameConfig.m; sourceTree = "<group>"; };
+		C4D0F09514D362EE00A1117A /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
+		C4D0F09614D362EE00A1117A /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
+		C4EAF89914D071050064D4E1 /* OPogmatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OPogmatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4EAF89D14D071050064D4E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C4EAF89F14D071050064D4E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C4EAF8A114D071050064D4E1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C4EAF8A514D071050064D4E1 /* pogmatch-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "pogmatch-Info.plist"; sourceTree = "<group>"; };
+		C4EAF8A714D071050064D4E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C4EAF8A914D071050064D4E1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C4EAF8AB14D071050064D4E1 /* openpogmatch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "openpogmatch-Prefix.pch"; sourceTree = "<group>"; };
+		C4EAF8AC14D071050064D4E1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C4EAF8AD14D071050064D4E1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C4EAF8BB14D0E3BD0064D4E1 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		C4EAF8BD14D0E3C70064D4E1 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		C4EAF8BF14D0E5260064D4E1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		C4EAF8C114D0E52D0064D4E1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		C4EAF8C714D11AD90064D4E1 /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
+		C4EAF8C814D11AD90064D4E1 /* MainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenu.m; sourceTree = "<group>"; };
+		C4EAF8C914D11AD90064D4E1 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		C4EAF8DE14D2128E0064D4E1 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		C4EAF8DF14D2128E0064D4E1 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		C4EAF8E014D2128E0064D4E1 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
+		C4EAF8E714D2173D0064D4E1 /* ButtonQuit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ButtonQuit.png; path = Assets/UI/ButtonQuit.png; sourceTree = "<group>"; };
+		C4EAF8EC14D21A480064D4E1 /* UINavigationController+Pog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Pog.h"; sourceTree = "<group>"; };
+		C4EAF8ED14D21A480064D4E1 /* UINavigationController+Pog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Pog.m"; sourceTree = "<group>"; };
+		C4EAF8EF14D21E5D0064D4E1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C4EAF8F114D229360064D4E1 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		C4EAF8F214D229360064D4E1 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C4EAF89614D071050064D4E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4EAF8F014D21E5D0064D4E1 /* QuartzCore.framework in Frameworks */,
+				C4EAF89E14D071050064D4E1 /* UIKit.framework in Frameworks */,
+				C4EAF8A014D071050064D4E1 /* Foundation.framework in Frameworks */,
+				C4EAF8A214D071050064D4E1 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4299928A14DD8D65003EA13C /* SimpleShapes */ = {
+			isa = PBXGroup;
+			children = (
+				4299928B14DD8D65003EA13C /* BlueCircle.png */,
+				4299928C14DD8D65003EA13C /* BlueQuad.png */,
+				4299928D14DD8D65003EA13C /* BlueTri.png */,
+				4299928E14DD8D65003EA13C /* GreenTri.png */,
+				4299928F14DD8D65003EA13C /* MultiQuad.png */,
+				4299929014DD8D65003EA13C /* PinkTri.png */,
+				4299929114DD8D65003EA13C /* RedCircle.png */,
+				4299929214DD8D65003EA13C /* RedQuad.png */,
+				4299929314DD8D65003EA13C /* YellowQuad.png */,
+				4299929414DD8D65003EA13C /* YellowTri.png */,
+			);
+			name = SimpleShapes;
+			path = Assets/Game/SimpleShapes;
+			sourceTree = "<group>";
+		};
+		C4EAF88E14D071050064D4E1 = {
+			isa = PBXGroup;
+			children = (
+				C4EAF8C114D0E52D0064D4E1 /* Default@2x.png */,
+				C4EAF8BF14D0E5260064D4E1 /* Default.png */,
+				C4EAF8BD14D0E3C70064D4E1 /* Icon@2x.png */,
+				C4EAF8BB14D0E3BD0064D4E1 /* Icon.png */,
+				C4EAF8A314D071050064D4E1 /* pogmatch */,
+				C4EAF8B814D0BE620064D4E1 /* Resources */,
+				C4EAF89C14D071050064D4E1 /* Frameworks */,
+				C4EAF89A14D071050064D4E1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C4EAF89A14D071050064D4E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C4EAF89914D071050064D4E1 /* OPogmatch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C4EAF89C14D071050064D4E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4EAF8EF14D21E5D0064D4E1 /* QuartzCore.framework */,
+				C4EAF89D14D071050064D4E1 /* UIKit.framework */,
+				C4EAF89F14D071050064D4E1 /* Foundation.framework */,
+				C4EAF8A114D071050064D4E1 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4EAF8A314D071050064D4E1 /* pogmatch */ = {
+			isa = PBXGroup;
+			children = (
+				C4EAF8AC14D071050064D4E1 /* AppDelegate.h */,
+				C4EAF8AD14D071050064D4E1 /* AppDelegate.m */,
+				C45CB8DC14D8E3CF001F8DBB /* PogAppEventHandler.h */,
+				C4EAF8EB14D21A260064D4E1 /* Core */,
+				C4EAF8C614D11AB60064D4E1 /* Game */,
+				C4EAF8C514D11A8C0064D4E1 /* UI */,
+				C4EAF8A414D071050064D4E1 /* Supporting Files */,
+			);
+			path = pogmatch;
+			sourceTree = "<group>";
+		};
+		C4EAF8A414D071050064D4E1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C4EAF8A514D071050064D4E1 /* pogmatch-Info.plist */,
+				C4EAF8A614D071050064D4E1 /* InfoPlist.strings */,
+				C4EAF8A914D071050064D4E1 /* main.m */,
+				C4EAF8AB14D071050064D4E1 /* openpogmatch-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C4EAF8B814D0BE620064D4E1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C4EAF8BA14D0C1700064D4E1 /* Game */,
+				C4EAF8B914D0C1680064D4E1 /* UI */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C4EAF8B914D0C1680064D4E1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C4EAF8E714D2173D0064D4E1 /* ButtonQuit.png */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		C4EAF8BA14D0C1700064D4E1 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				4299929514DD8D65003EA13C /* CardImages.plist */,
+				4299928A14DD8D65003EA13C /* SimpleShapes */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		C4EAF8C514D11A8C0064D4E1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C47BD84314D6E715008B2CA6 /* PostGameController.h */,
+				C47BD84414D6E715008B2CA6 /* PostGameController.m */,
+				C47BD84514D6E716008B2CA6 /* PostGameController.xib */,
+				C4EAF8C714D11AD90064D4E1 /* MainMenu.h */,
+				C4EAF8C814D11AD90064D4E1 /* MainMenu.m */,
+				C4EAF8C914D11AD90064D4E1 /* MainMenu.xib */,
+				C47BD83C14D542D8008B2CA6 /* PogUIProgressBar.h */,
+				C47BD83D14D542D8008B2CA6 /* PogUIProgressBar.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		C4EAF8C614D11AB60064D4E1 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				C4EAF8DE14D2128E0064D4E1 /* GameViewController.h */,
+				C4EAF8DF14D2128E0064D4E1 /* GameViewController.m */,
+				C4EAF8E014D2128E0064D4E1 /* GameViewController.xib */,
+				C4D0F09514D362EE00A1117A /* CardView.h */,
+				C4D0F09614D362EE00A1117A /* CardView.m */,
+				C4EAF8F114D229360064D4E1 /* Card.h */,
+				C4EAF8F214D229360064D4E1 /* Card.m */,
+				42EA3CC314D286AA0046751D /* GameManager.h */,
+				42EA3CC414D286AA0046751D /* GameManager.m */,
+				C4D0F08D14D34AC200A1117A /* GameConfig.h */,
+				C4D0F08E14D34AC200A1117A /* GameConfig.m */,
+				C47BD83914D53C67008B2CA6 /* StatsManager.h */,
+				C47BD83A14D53C67008B2CA6 /* StatsManager.m */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		C4EAF8EB14D21A260064D4E1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				429992A114DDC545003EA13C /* ImageLib.h */,
+				429992A214DDC545003EA13C /* ImageLib.m */,
+				C4EAF8EC14D21A480064D4E1 /* UINavigationController+Pog.h */,
+				C4EAF8ED14D21A480064D4E1 /* UINavigationController+Pog.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C4EAF89814D071050064D4E1 /* openpogmatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4EAF8B114D071050064D4E1 /* Build configuration list for PBXNativeTarget "openpogmatch" */;
+			buildPhases = (
+				C4EAF89514D071050064D4E1 /* Sources */,
+				C4EAF89614D071050064D4E1 /* Frameworks */,
+				C4EAF89714D071050064D4E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = openpogmatch;
+			productName = pogmatch;
+			productReference = C4EAF89914D071050064D4E1 /* OPogmatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C4EAF89014D071050064D4E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "GeoloPigs, Inc";
+			};
+			buildConfigurationList = C4EAF89314D071050064D4E1 /* Build configuration list for PBXProject "openpogmatch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C4EAF88E14D071050064D4E1;
+			productRefGroup = C4EAF89A14D071050064D4E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C4EAF89814D071050064D4E1 /* openpogmatch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C4EAF89714D071050064D4E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4EAF8A814D071050064D4E1 /* InfoPlist.strings in Resources */,
+				C4EAF8BC14D0E3BD0064D4E1 /* Icon.png in Resources */,
+				C4EAF8BE14D0E3C70064D4E1 /* Icon@2x.png in Resources */,
+				C4EAF8C014D0E5260064D4E1 /* Default.png in Resources */,
+				C4EAF8C214D0E52D0064D4E1 /* Default@2x.png in Resources */,
+				C4EAF8CB14D11AD90064D4E1 /* MainMenu.xib in Resources */,
+				C4EAF8E214D2128E0064D4E1 /* GameViewController.xib in Resources */,
+				C4EAF8E914D2173D0064D4E1 /* ButtonQuit.png in Resources */,
+				C47BD84714D6E716008B2CA6 /* PostGameController.xib in Resources */,
+				4299929614DD8D65003EA13C /* BlueCircle.png in Resources */,
+				4299929714DD8D65003EA13C /* BlueQuad.png in Resources */,
+				4299929814DD8D65003EA13C /* BlueTri.png in Resources */,
+				4299929914DD8D65003EA13C /* GreenTri.png in Resources */,
+				4299929A14DD8D65003EA13C /* MultiQuad.png in Resources */,
+				4299929B14DD8D65003EA13C /* PinkTri.png in Resources */,
+				4299929C14DD8D65003EA13C /* RedCircle.png in Resources */,
+				4299929D14DD8D65003EA13C /* RedQuad.png in Resources */,
+				4299929E14DD8D65003EA13C /* YellowQuad.png in Resources */,
+				4299929F14DD8D65003EA13C /* YellowTri.png in Resources */,
+				429992A014DD8D65003EA13C /* CardImages.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C4EAF89514D071050064D4E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4EAF8AA14D071050064D4E1 /* main.m in Sources */,
+				C4EAF8AE14D071050064D4E1 /* AppDelegate.m in Sources */,
+				C4EAF8CA14D11AD90064D4E1 /* MainMenu.m in Sources */,
+				C4EAF8E114D2128E0064D4E1 /* GameViewController.m in Sources */,
+				C4EAF8EE14D21A480064D4E1 /* UINavigationController+Pog.m in Sources */,
+				C4EAF8F314D229360064D4E1 /* Card.m in Sources */,
+				42EA3CC514D286AA0046751D /* GameManager.m in Sources */,
+				C4D0F08F14D34AC200A1117A /* GameConfig.m in Sources */,
+				C4D0F09714D362EE00A1117A /* CardView.m in Sources */,
+				C47BD83B14D53C67008B2CA6 /* StatsManager.m in Sources */,
+				C47BD83E14D542D8008B2CA6 /* PogUIProgressBar.m in Sources */,
+				C47BD84614D6E716008B2CA6 /* PostGameController.m in Sources */,
+				429992A314DDC545003EA13C /* ImageLib.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C4EAF8A614D071050064D4E1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4EAF8A714D071050064D4E1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C4EAF8AF14D071050064D4E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C4EAF8B014D071050064D4E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C4EAF8B214D071050064D4E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "pogmatch/openpogmatch-Prefix.pch";
+				GCC_VERSION = "";
+				INFOPLIST_FILE = "pogmatch/pogmatch-Info.plist";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = OPogmatch;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C4EAF8B314D071050064D4E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "pogmatch/openpogmatch-Prefix.pch";
+				GCC_VERSION = "";
+				INFOPLIST_FILE = "pogmatch/pogmatch-Info.plist";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = OPogmatch;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C4EAF89314D071050064D4E1 /* Build configuration list for PBXProject "openpogmatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4EAF8AF14D071050064D4E1 /* Debug */,
+				C4EAF8B014D071050064D4E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4EAF8B114D071050064D4E1 /* Build configuration list for PBXNativeTarget "openpogmatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4EAF8B214D071050064D4E1 /* Debug */,
+				C4EAF8B314D071050064D4E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C4EAF89014D071050064D4E1 /* Project object */;
+}

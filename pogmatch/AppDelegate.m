@@ -25,6 +25,7 @@
 #import "GameManager.h"
 #import "StatsManager.h"
 #import "PogAppEventHandler.h"
+#import "Nextpeer/Nextpeer.h"
 
 @interface AppDelegate (PrivateMethods)
 - (void) appInit;
@@ -47,10 +48,19 @@
 {
     [GameManager getInstance];
     [StatsManager getInstance];
+
+    NSMutableDictionary* settings = [NSMutableDictionary dictionary];
+    [settings setObject:[NSNumber numberWithInt:NPNotificationPosition_BOTTOM] forKey:NextpeerSettingNotificationPosition];
+    [settings setObject:[self window] forKey:NextpeerSettingPresentationWindow];
+    [Nextpeer initializeWithProductKey:@"YourNextpeerGameKey"
+                           andSettings:settings
+                          andDelegates:[NPDelegatesContainer containerWithNextpeerDelegate:[GameManager getInstance]
+                                                                        tournamentDelegate:[GameManager getInstance]]];
 }
 
 - (void) appShutdown
 {
+    [Nextpeer shutdown];
     [StatsManager destroyInstance];
     [GameManager destroyInstance];
 }

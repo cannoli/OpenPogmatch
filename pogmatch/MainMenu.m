@@ -25,11 +25,13 @@
 #import "GameViewController.h"
 #import "UINavigationController+Pog.h"
 #import "GameConfig.h"
+#import "Nextpeer/Nextpeer.h"
 #import <QuartzCore/QuartzCore.h>
 
 
 @interface MainMenu (PrivateMethods)
 + (GameConfig*) singleplayerGameConfig;
++ (GameConfig*) multiplayerGameConfig;
 - (void) startGameWithConfig:(GameConfig*)config;
 @end
 
@@ -107,6 +109,13 @@
     return newConfig;
 }
 
++ (GameConfig*) multiplayerGameConfig
+{
+    GameConfig* newConfig = [[[GameConfig alloc] initWithImageLibName:@"CardImages" numRows:5 numColumns:4] autorelease];
+    newConfig.gameDuration = 120.0f;            // <-- 2 minutes
+    newConfig.gameMode = GAMEMODE_MULTIPLAYER;  // <-- multiplayer
+    return newConfig;    
+}
 
 #pragma mark - buttons
 - (void) startGameWithConfig:(GameConfig *)config
@@ -132,6 +141,12 @@
 - (void) playButtonPressed:(id)sender
 {
     [self startGameWithConfig:[MainMenu singleplayerGameConfig]];
+}
+
+- (IBAction)multiplayerButtonPressed:(id)sender 
+{
+    [Nextpeer launchDashboard];
+    [self startGameWithConfig:[MainMenu multiplayerGameConfig]]; // <-- start game in multiplayer mode
 }
 
 

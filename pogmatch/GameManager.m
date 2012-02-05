@@ -26,6 +26,8 @@
 #import "ImageLib.h"
 #import "Card.h"
 #import "CardView.h"
+#import "Nextpeer/Nextpeer.h"
+
 
 static const float TIMEBOOST_PER_MATCH = 2.0f;  // seconds
 static const float SHAKERANGE_INCR = M_PI_2 / 6.0f;
@@ -33,6 +35,7 @@ static const float SHAKERANGE_MAX = M_PI_2;
 
 @interface GameManager (PrivateMethods)
 - (void) initDeck;
+- (void) resetAttackStates;
 @end
 
 @implementation GameManager
@@ -46,8 +49,10 @@ static const float SHAKERANGE_MAX = M_PI_2;
 @synthesize timeRemaining = _timeRemaining;
 @synthesize numConsecutiveMatches = _numConsecutiveMatches;
 @synthesize shouldStartGame = _shouldStartGame;
-@synthesize shouldExitGame = _shouldExitGame;
 @synthesize hasFinishedGame = _hasFinishedGame;
+@synthesize shouldExitGame = _shouldExitGame;
+@synthesize lastAttackerName = _lastAttackerName;
+@synthesize lastAttackAngle = _lastAttackAngle;
 
 - (Card*) roundCardAtIndex:(unsigned int)index
 {
@@ -74,6 +79,17 @@ static const float SHAKERANGE_MAX = M_PI_2;
     return result;
 }
 
+- (BOOL) hasBeenAttacked
+{
+    BOOL result = NO;
+    if(_numAttacksProcessed < _numAttacksReceived)
+    {
+        result = YES;
+        _numAttacksProcessed = _numAttacksReceived;
+    }
+    return result;
+}
+
 #pragma mark - init / shutdown
 
 - (id) init
@@ -89,8 +105,8 @@ static const float SHAKERANGE_MAX = M_PI_2;
         _timeRemaining = 0.0f;
         _numConsecutiveMatches = 0;
         _shouldStartGame = NO;
-        _shouldExitGame = NO;
         _hasFinishedGame = NO;
+        _shouldExitGame = NO;
     }
     return self;
 }
@@ -146,7 +162,16 @@ static const float SHAKERANGE_MAX = M_PI_2;
     // init timer
     _timeRemaining = [_curConfig gameDuration];
     
-    _shouldStartGame = YES;
+    if(GAMEMODE_MULTIPLAYER == [self curGameMode])
+    {
+        // if multiplayer, don't start game, wait for trigger in NextpeerDelegate
+        _shouldStartGame = NO;
+        [self resetAttackStates];
+    }
+    else
+    {
+        _shouldStartGame = YES;
+    }
     _hasFinishedGame = NO;
     _shouldExitGame = NO;
 }
@@ -173,6 +198,7 @@ static const float SHAKERANGE_MAX = M_PI_2;
     _shouldStartGame = NO;
     _hasFinishedGame = NO;
     _shouldExitGame = NO;
+    [self resetAttackStates];
 }
 
 - (void) roundCardsRandomInsertCard:(Card*)newCard
@@ -279,8 +305,11 @@ static const float SHAKERANGE_MAX = M_PI_2;
         result = YES;
         ++_numConsecutiveMatches;
         
-        // reward player bonus time in SinglePlayer mode
-        _timeRemaining += TIMEBOOST_PER_MATCH;
+        if(GAMEMODE_MULTIPLAYER != [self curGameMode])
+        {
+            // reward player bonus time in SinglePlayer mode
+            _timeRemaining += TIMEBOOST_PER_MATCH;
+        }
     }
     else
     {
@@ -295,16 +324,29 @@ static const float SHAKERANGE_MAX = M_PI_2;
 
 - (void) update:(NSTimeInterval)elapsed
 {
-    _timeRemaining -= elapsed;
-    if(0.0f > _timeRemaining)
+    if(GAMEMODE_MULTIPLAYER == [self curGameMode])
     {
-        _timeRemaining = 0.0f;
-        _hasFinishedGame = YES;
+        _timeRemaining = [Nextpeer timeLeftInTourament];    // <-- use time from Nextpeer
+    }
+    else
+    {
+        _timeRemaining -= elapsed;
+        if(0.0f > _timeRemaining)
+        {
+            _timeRemaining = 0.0f;
+            _hasFinishedGame = YES;
+        }
     }
 }
 
 - (void) exitRequested
 {
+    // in multiplayer, forfeit the tournament
+    if(GAMEMODE_MULTIPLAYER == [[GameManager getInstance] curGameMode])
+    {
+        [Nextpeer reportForfeitForCurrentTournament];
+    }
+    
     // exit the game
     _timeRemaining = 0.0f;
     _shouldExitGame = YES;
@@ -313,6 +355,73 @@ static const float SHAKERANGE_MAX = M_PI_2;
 - (void) startRequested
 {
     _shouldStartGame = YES;
+}
+
+#pragma mark - multiplayer pushData
+- (void) pushAttackToOtherPlayers
+{
+    // compute a shake angle based on number of consecutive matches
+    float factor = (float)(_numConsecutiveMatches) / 6.0f;
+    if(1.0f <= factor) factor = 1.0f;
+    float angle = M_PI_2 * factor;
+
+    // push it
+    NSError* error;
+    NSNumber* angleNumber = [NSNumber numberWithFloat:angle];
+    NSData* outData = [NSPropertyListSerialization dataWithPropertyList:angleNumber 
+                                                                 format:NSPropertyListBinaryFormat_v1_0
+                                                                options:0
+                                                                  error:&error];
+    [Nextpeer pushDataToOtherPlayers:outData];
+}
+
+- (void) resetAttackStates
+{
+    _numAttacksReceived = 0;
+    _numAttacksProcessed = 0;
+    self.lastAttackerName = nil;
+    _lastAttackAngle = 0.0f;
+}
+#pragma mark - NPTournamentDelegate
+-(void)nextpeerDidReceiveTournamentCustomMessage:(NPTournamentCustomMessageContainer*)message
+{
+    NSError* error;
+    NSData* messageData = message.message;
+    if(messageData)
+    {
+        NSNumber* dataNumber = [NSPropertyListSerialization propertyListWithData:messageData
+                                                                               options:NSPropertyListImmutable
+                                                                                format:NULL
+                                                                                 error:&error];
+        _lastAttackAngle = [dataNumber floatValue];
+    }
+    else
+    {
+        _lastAttackAngle = M_PI_4;
+    }
+    
+    self.lastAttackerName = [NSString stringWithString:[message playerName]];
+    ++_numAttacksReceived;
+}
+
+#pragma mark - NextpeerDelegate
+- (void)nextpeerDidTournamentStartWithDetails:(NPTournamentStartDataContainer *)tournamentContainer
+{
+    _shouldStartGame = YES;
+}
+
+- (void) nextpeerDidTournamentEnd
+{
+    _hasFinishedGame = YES;
+}
+
+- (void) nextpeerDashboardDidDisappear
+{
+    // if not in tournament, exit to main menu
+    if(![Nextpeer isCurrentlyInTournament])
+    {
+        _shouldExitGame = YES;
+    }
 }
 
 

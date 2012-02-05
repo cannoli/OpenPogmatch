@@ -22,10 +22,12 @@
 
 #import <Foundation/Foundation.h>
 #import "GameConfig.h"
+#import "Nextpeer/NextpeerDelegate.h"
+#import "Nextpeer/NPTournamentDelegate.h"
 
 @class ImageLib;
 @class Card;
-@interface GameManager : NSObject
+@interface GameManager : NSObject<NextpeerDelegate,NPTournamentDelegate>
 {
     // config
     GameConfig*     _curConfig;
@@ -42,6 +44,12 @@
     BOOL _shouldStartGame;
     BOOL _hasFinishedGame;
     BOOL _shouldExitGame;
+    
+    unsigned int _numAttacksReceived;
+    unsigned int _numAttacksProcessed;
+    NSString* _lastAttackerName;
+    float _lastAttackAngle;
+    
 }
 @property (nonatomic,retain) GameConfig* curConfig;
 @property (nonatomic,retain) ImageLib* imageLib;
@@ -51,8 +59,11 @@
 @property (nonatomic,readonly) NSTimeInterval timeRemaining;
 @property (nonatomic,readonly) unsigned int numConsecutiveMatches;
 @property (nonatomic,readonly) BOOL shouldStartGame;
-@property (nonatomic,readonly) BOOL shouldExitGame;
 @property (nonatomic,readonly) BOOL hasFinishedGame;
+@property (nonatomic,readonly) BOOL shouldExitGame;
+@property (nonatomic,retain) NSString* lastAttackerName;
+@property (nonatomic,assign) float lastAttackAngle;
+- (BOOL) hasBeenAttacked;
 - (Card*) roundCardAtIndex:(unsigned int)index;
 - (float) timePercentRemaining;
 - (unsigned int) curGameMode;
@@ -69,6 +80,7 @@
 
 // game logic
 - (BOOL) matchCards:(Card*)card1:(Card*)card2;
+- (void) pushAttackToOtherPlayers;
 
 // singleton
 + (GameManager*) getInstance;

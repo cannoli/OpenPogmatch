@@ -27,4 +27,5 @@
     UIView *_loadingView;
 }
 - (IBAction)playButtonPressed:(id)sender;
+- (IBAction)multiplayerButtonPressed:(id)sender;
 @end

@@ -22,6 +22,7 @@
 
 #import "StatsManager.h"
 #import "GameManager.h"
+#import "Nextpeer/Nextpeer.h"
 
 static const unsigned int POINTS_PAIRSOPENED = 15;
 static const unsigned int POINTS_PAIRSMATCHED = 100;
@@ -111,6 +112,11 @@ static const unsigned int MULTIPLIER_UPGRADE = 1;
     
     // commit to total score
     _score += (newScore * _multiplier);
+    
+    if(GAMEMODE_MULTIPLAYER == [[GameManager getInstance] curGameMode])
+    {
+        [Nextpeer reportScoreForCurrentTournament:_score];
+    }
 }
 
 - (void) upgradeMultiplier

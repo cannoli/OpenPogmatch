@@ -67,6 +67,7 @@ enum GameStates
 - (void) showPostGame;
 - (void) showBanner:(NSString*)text;
 - (void) showSubBanner:(NSString*)text;
+- (void) handleMultiplayerAttacks;
 @end
 
 @implementation GameViewController
@@ -262,6 +263,14 @@ enum GameStates
             else
             {
                 [[GameManager getInstance] update:elapsed];
+                if(GAMEMODE_MULTIPLAYER == [[GameManager getInstance] curGameMode])
+                {
+                    [self handleMultiplayerAttacks];
+                    for(CardView* curCard in _activeCardViews)
+                    {
+                        [curCard updateAnim:elapsed];
+                    }
+                }
                 [self refreshTimeBar];
                 if(![[GameManager getInstance] hasFinishedGame])
                 {
@@ -281,16 +290,19 @@ enum GameStates
                 }
                 else
                 {
-                    // time is up
+                    // game finished
                     
                     // tally up stats
                     [[StatsManager getInstance] gameEnded];
-
-                    // in all other modes, show banner and post-game UI
-                    [self showBanner:@"Time Up"];
-                    [self showPostGame];
-                    
                     _gameState = GAMESTATE_POSTGAME;
+
+                    // Don't show post game UI in multiplayer
+                    if(GAMEMODE_MULTIPLAYER != [[GameManager getInstance] curGameMode])
+                    {
+                        // in all other modes, show banner and post-game UI
+                        [self showBanner:@"Time Up"];
+                        [self showPostGame];
+                    }
                 }
             }            
             break;
@@ -361,9 +373,15 @@ enum GameStates
                 // upgrade multiplier for next round
                 [[StatsManager getInstance] upgradeMultiplier];
                 
+                if(GAMEMODE_MULTIPLAYER == [[GameManager getInstance] curGameMode])
+                {
+                    [[GameManager getInstance] pushAttackToOtherPlayers];
+                }
+                
                 // show banner
                 [self showBanner:@"Multiplier Up"];
                 [self showSubBanner:[NSString stringWithFormat:@"x%d", [[StatsManager getInstance] multiplier]]];
+                
             }
         }
         else
@@ -378,6 +396,27 @@ enum GameStates
         
         // clear the selected array
         [_selectedCards removeAllObjects];
+    }
+}
+
+- (void) handleMultiplayerAttacks
+{
+    if([[GameManager getInstance] hasBeenAttacked])
+    {
+        // notify player of attack
+        [self showBanner:@"Attacked!"];
+        [self showSubBanner:[NSString stringWithFormat:@"from %@", [[GameManager getInstance] lastAttackerName]]];
+        
+        // randomly select two cards and shake them
+        unsigned int index1 = arc4random_uniform([_activeCardViews count]);
+        unsigned int index2 = arc4random_uniform([_activeCardViews count]);
+        float shakeRange = [[GameManager getInstance] lastAttackAngle];
+        CardView* card1 = [_activeCardViews objectAtIndex:index1];
+        CardView* card2 = [_activeCardViews objectAtIndex:index2];
+        
+        // shake the cards with number-of-times off by 1 so that they end up in different directions
+        [card1 shakeCard:shakeRange numTimes:10];
+        [card2 shakeCard:shakeRange numTimes:11];
     }
 }
 
@@ -557,6 +596,11 @@ enum GameStates
         _savedTime = [[NSDate dateWithTimeIntervalSinceNow:0] retain];
         _savedFiringDate = [[_gameLoopTimer fireDate] retain];
         [_gameLoopTimer setFireDate:[NSDate distantFuture]];
+    }
+    // for Multiplayer, exit the game because Nextpeer disconnects automatically
+    if(GAMEMODE_MULTIPLAYER == [[GameManager getInstance] curGameMode])
+    {
+        [[GameManager getInstance] exitRequested];
     }
 }
 

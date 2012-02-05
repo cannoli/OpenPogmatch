@@ -19,6 +19,13 @@
 		4299929F14DD8D65003EA13C /* YellowTri.png in Resources */ = {isa = PBXBuildFile; fileRef = 4299929414DD8D65003EA13C /* YellowTri.png */; };
 		429992A014DD8D65003EA13C /* CardImages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4299929514DD8D65003EA13C /* CardImages.plist */; };
 		429992A314DDC545003EA13C /* ImageLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 429992A214DDC545003EA13C /* ImageLib.m */; };
+		42B4108E14DE00BC00941FA2 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B4108D14DE00BC00941FA2 /* MessageUI.framework */; };
+		42B4109014DE00C500941FA2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B4108F14DE00C500941FA2 /* CFNetwork.framework */; };
+		42B4109214DE00CC00941FA2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B4109114DE00CC00941FA2 /* SystemConfiguration.framework */; };
+		42B4109414DE00D300941FA2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B4109314DE00D300941FA2 /* MobileCoreServices.framework */; };
+		42B4109614DE00DB00941FA2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B4109514DE00DB00941FA2 /* Security.framework */; };
+		42B4109814DE00E300941FA2 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B4109714DE00E300941FA2 /* libsqlite3.0.dylib */; };
+		42B4109A14DE00EB00941FA2 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B4109914DE00EB00941FA2 /* libz.1.2.5.dylib */; };
 		42EA3CC514D286AA0046751D /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EA3CC414D286AA0046751D /* GameManager.m */; };
 		C47BD83B14D53C67008B2CA6 /* StatsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BD83A14D53C67008B2CA6 /* StatsManager.m */; };
 		C47BD83E14D542D8008B2CA6 /* PogUIProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BD83D14D542D8008B2CA6 /* PogUIProgressBar.m */; };
@@ -60,6 +67,13 @@
 		4299929514DD8D65003EA13C /* CardImages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CardImages.plist; path = Assets/Game/CardImages.plist; sourceTree = "<group>"; };
 		429992A114DDC545003EA13C /* ImageLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLib.h; sourceTree = "<group>"; };
 		429992A214DDC545003EA13C /* ImageLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLib.m; sourceTree = "<group>"; };
+		42B4108D14DE00BC00941FA2 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		42B4108F14DE00C500941FA2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		42B4109114DE00CC00941FA2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		42B4109314DE00D300941FA2 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		42B4109514DE00DB00941FA2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		42B4109714DE00E300941FA2 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		42B4109914DE00EB00941FA2 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		42EA3CC314D286AA0046751D /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		42EA3CC414D286AA0046751D /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
 		C45CB8DC14D8E3CF001F8DBB /* PogAppEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PogAppEventHandler.h; sourceTree = "<group>"; };
@@ -107,6 +121,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42B4109A14DE00EB00941FA2 /* libz.1.2.5.dylib in Frameworks */,
+				42B4109814DE00E300941FA2 /* libsqlite3.0.dylib in Frameworks */,
+				42B4109614DE00DB00941FA2 /* Security.framework in Frameworks */,
+				42B4109414DE00D300941FA2 /* MobileCoreServices.framework in Frameworks */,
+				42B4109214DE00CC00941FA2 /* SystemConfiguration.framework in Frameworks */,
+				42B4109014DE00C500941FA2 /* CFNetwork.framework in Frameworks */,
+				42B4108E14DE00BC00941FA2 /* MessageUI.framework in Frameworks */,
 				C4EAF8F014D21E5D0064D4E1 /* QuartzCore.framework in Frameworks */,
 				C4EAF89E14D071050064D4E1 /* UIKit.framework in Frameworks */,
 				C4EAF8A014D071050064D4E1 /* Foundation.framework in Frameworks */,
@@ -160,6 +181,13 @@
 		C4EAF89C14D071050064D4E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42B4109914DE00EB00941FA2 /* libz.1.2.5.dylib */,
+				42B4109714DE00E300941FA2 /* libsqlite3.0.dylib */,
+				42B4109514DE00DB00941FA2 /* Security.framework */,
+				42B4109314DE00D300941FA2 /* MobileCoreServices.framework */,
+				42B4109114DE00CC00941FA2 /* SystemConfiguration.framework */,
+				42B4108F14DE00C500941FA2 /* CFNetwork.framework */,
+				42B4108D14DE00BC00941FA2 /* MessageUI.framework */,
 				C4EAF8EF14D21E5D0064D4E1 /* QuartzCore.framework */,
 				C4EAF89D14D071050064D4E1 /* UIKit.framework */,
 				C4EAF89F14D071050064D4E1 /* Foundation.framework */,
@@ -432,7 +460,10 @@
 				GCC_PREFIX_HEADER = "pogmatch/openpogmatch-Prefix.pch";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "pogmatch/pogmatch-Info.plist";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = OPogmatch;
 				WRAPPER_EXTENSION = app;
 			};
@@ -449,7 +480,10 @@
 				GCC_PREFIX_HEADER = "pogmatch/openpogmatch-Prefix.pch";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "pogmatch/pogmatch-Info.plist";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = OPogmatch;
 				WRAPPER_EXTENSION = app;
 			};

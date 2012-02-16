@@ -4,6 +4,18 @@ OpenPogmatch
 OpenPogmatch is a simple card-matching memory game.
 This project is a companion to a Nextpeer Multiplayer Tutorial documented on http://wiki.geolopigs.com/home/pogmatch-multiplayer-with-nextpeer.
 
+Tutorial Videos
+===============
+* Creating multiplayer distractions in realtime using Nextpeer multiplayer SDK - http://youtu.be/m7zDmeZrLgQ
+
+iTunes link
+===========
+http://itunes.apple.com/app/pogmatch/id499622283
+
+Nextpeer developers website
+===========================
+http://developers.nextpeer.com
+
 Usage
 =====
 

@@ -326,7 +326,7 @@ static const float SHAKERANGE_MAX = M_PI_2;
 {
     if(GAMEMODE_MULTIPLAYER == [self curGameMode])
     {
-        _timeRemaining = [Nextpeer timeLeftInTourament];    // <-- use time from Nextpeer
+        _timeRemaining = [Nextpeer timeLeftInTournament];    // <-- use time from Nextpeer
     }
     else
     {

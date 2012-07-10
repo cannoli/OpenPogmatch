@@ -27,6 +27,7 @@
 		42B4109814DE00E300941FA2 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B4109714DE00E300941FA2 /* libsqlite3.0.dylib */; };
 		42B4109A14DE00EB00941FA2 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B4109914DE00EB00941FA2 /* libz.1.2.5.dylib */; };
 		42EA3CC514D286AA0046751D /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EA3CC414D286AA0046751D /* GameManager.m */; };
+		4E9F37CB15AC16A000EF5AC5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9F37CA15AC16A000EF5AC5 /* StoreKit.framework */; };
 		C47BD83B14D53C67008B2CA6 /* StatsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BD83A14D53C67008B2CA6 /* StatsManager.m */; };
 		C47BD83E14D542D8008B2CA6 /* PogUIProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BD83D14D542D8008B2CA6 /* PogUIProgressBar.m */; };
 		C47BD84614D6E716008B2CA6 /* PostGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BD84414D6E715008B2CA6 /* PostGameController.m */; };
@@ -76,6 +77,7 @@
 		42B4109914DE00EB00941FA2 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		42EA3CC314D286AA0046751D /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		42EA3CC414D286AA0046751D /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
+		4E9F37CA15AC16A000EF5AC5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C45CB8DC14D8E3CF001F8DBB /* PogAppEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PogAppEventHandler.h; sourceTree = "<group>"; };
 		C47BD83914D53C67008B2CA6 /* StatsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsManager.h; sourceTree = "<group>"; };
 		C47BD83A14D53C67008B2CA6 /* StatsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsManager.m; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E9F37CB15AC16A000EF5AC5 /* StoreKit.framework in Frameworks */,
 				42B4109A14DE00EB00941FA2 /* libz.1.2.5.dylib in Frameworks */,
 				42B4109814DE00E300941FA2 /* libsqlite3.0.dylib in Frameworks */,
 				42B4109614DE00DB00941FA2 /* Security.framework in Frameworks */,
@@ -181,6 +184,7 @@
 		C4EAF89C14D071050064D4E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4E9F37CA15AC16A000EF5AC5 /* StoreKit.framework */,
 				42B4109914DE00EB00941FA2 /* libz.1.2.5.dylib */,
 				42B4109714DE00E300941FA2 /* libsqlite3.0.dylib */,
 				42B4109514DE00DB00941FA2 /* Security.framework */,
@@ -455,6 +459,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../../Desktop/Nextpeer.framework.v1.1.9\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pogmatch/openpogmatch-Prefix.pch";
@@ -475,6 +480,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../../Desktop/Nextpeer.framework.v1.1.9\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pogmatch/openpogmatch-Prefix.pch";

@@ -52,6 +52,8 @@
     NSMutableDictionary* settings = [NSMutableDictionary dictionary];
     [settings setObject:[NSNumber numberWithInt:NPNotificationPosition_BOTTOM] forKey:NextpeerSettingNotificationPosition];
     [settings setObject:[self window] forKey:NextpeerSettingPresentationWindow];
+    
+    // Don't forget to set up your Nextpeer account for this game (at http://developers.nextpeer.com/) 
     [Nextpeer initializeWithProductKey:@"YourNextpeerGameKey"
                            andSettings:settings
                           andDelegates:[NPDelegatesContainer containerWithNextpeerDelegate:[GameManager getInstance]
@@ -121,6 +123,9 @@
     
     [self appInit];
     
+    // Register for push (Your provision profile should support it)
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert];
+    
     return YES;
 }
 
@@ -168,6 +173,24 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+}
+
+// Once we register to remote notification we should notify Nextpeer about the device token
+-(void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    [Nextpeer registerDeviceToken:deviceToken];
+}
+
+// Remote notification alert handling
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [Nextpeer handleRemoteNotification:userInfo];
+}
+
+// Local notification alert handling
+-(void)application:(UIApplication*)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    [Nextpeer handleLocalNotification:notification];
 }
 
 #pragma mark - helper functions
